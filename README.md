@@ -78,3 +78,14 @@ python compress_videos.py ./videos ./social -b 2500k -r 1080x1920 -c 23
 - Error handling: Continues on individual file failures
 
 Pro tip: CRF 23 + 2M bitrate typically reduces size 50-70% while maintaining excellent visual quality.
+
+# face extraction
+
+## Extract faces only
+python face_categorizer.py /path/to/images --output faces
+
+## Extract AND categorize faces
+python face_categorizer.py /path/to/images --categorize --output faces --min-faces 3
+
+## Fine-tune similarity (lower = stricter matching)
+python face_categorizer.py /path/to/images --categorize --similarity 0.4
