@@ -123,6 +123,7 @@ class ImageRotatorApp:
             
         self.images = [f for f in os.listdir(directory) 
                       if f.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp'))]
+        self.images = sorted(self.images, key=os.path.basename)
         self.image_dir = directory
         self.current_index = 0
         
